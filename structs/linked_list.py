@@ -14,6 +14,17 @@ class LinkedList:
         self.head = None
         self.last_node = None
 
+    def to_list(self):
+        ll = []
+        if self.head is None:
+            return ll
+
+        node = self.head
+        while node:
+            ll.append(node.data)
+            node = node.next_node
+        return ll
+
     def print_ll(self):
         ll_string = ""
         node = self.head
@@ -42,21 +53,27 @@ class LinkedList:
         self.last_node.next_node = Node(data, None)
         self.last_node = self.last_node.next_node
 
+    def get_user_by_id(self, user_id):
+        node = self.head
+        while node:
+            if node.data["id"] is int(user_id):
+                return node.data
+            node = node.next_node
+        return None
 
-ll = LinkedList()
-# node4 = Node("4", None)
-ll.insert_beginning(0)
-ll.insert_at_end(7)
-ll.insert_beginning(9)
-ll.insert_beginning(1)
-ll.insert_at_end(7)
-ll.insert_beginning(1)
-ll.insert_beginning(13)
-ll.insert_at_end(4)
-ll.insert_beginning(6)
-ll.insert_beginning(1)
-ll.insert_at_end(7)
-ll.insert_beginning(9)
-ll.insert_beginning(1)
 
-ll.print_ll()
+if __name__ == '__main__':
+
+    ll = LinkedList()
+    # node4 = Node("4", None)
+    ll.insert_beginning(0)
+    ll.insert_beginning(9)
+    ll.insert_beginning(1)
+    ll.insert_beginning(1)
+    ll.insert_beginning(13)
+    ll.insert_beginning(6)
+    ll.insert_beginning(1)
+    ll.insert_beginning(9)
+    ll.insert_beginning(1)
+
+    ll.print_ll()
