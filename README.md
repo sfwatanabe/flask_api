@@ -6,3 +6,4 @@ Simple blog application using flask and some basic implementations of data struc
 
 * Linked List implementation used for user GET requests
 * Hash Table implementation used for new user POST requests
+* Binary search tree implementation used for blog post GET requests
